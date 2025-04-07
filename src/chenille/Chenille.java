@@ -13,14 +13,14 @@ public class Chenille {
 
 	public void dessiner(char[][] t) {
 		for (Anneau a : anneaux)
-			t[a.getX()][a.getY()]= a.getSymbole();
-		t[tete.getX()][tete.getY()] = tete.getSymbole();
+			t[a.x()][a.y()]= a.getSymbole();
+		t[tete.x()][tete.y()] = tete.getSymbole();
 	}
 
 	public void deplacer(int xMAX, int yMAX) {
 		for (int i = anneaux.length -1; i >=1; --i)
-			anneaux[i].placerA(anneaux[i-1]);
-		anneaux[0].placerA(tete);
+			anneaux[i].placerSur(anneaux[i-1]);
+		anneaux[0].placerSur(tete);
 		tete.deplacer(xMAX, yMAX);
 	}
 

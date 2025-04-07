@@ -19,14 +19,13 @@ public class Tete extends Anneau {
 	public char getSymbole() {
 		return 't';
 	}
-	
-	//@Override
+
 	public void deplacer(int xMax, int yMax) {
-		if (getX() == 0 || getX() == xMax || 
-				getY() == 0 || getY() == yMax)
+		if (x() == 0 || x() == xMax ||
+				y() == 0 || y() == yMax)
 			cap = cap.inverser();
 		else
 			cap = cap.deriver(1);
-		super.deplacer(cap.getDx(), cap.getDy());
+		super.placerA(x()+cap.getDx(), y()+cap.getDy());
 	}
 }

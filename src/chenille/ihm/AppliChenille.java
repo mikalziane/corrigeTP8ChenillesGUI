@@ -1,5 +1,7 @@
 // AppliChenille.java
-package chenille;
+package chenille.ihm;
+
+import chenille.Chenille;
 
 public class AppliChenille {
   
@@ -26,7 +28,7 @@ public class AppliChenille {
   
   public static void main(String[] args) {
     final int NBPAS = 50, NB_ANNEAUX = 7;
-    final int XMAX = 60, YMAX = 12;
+    final int XMAX = 40, YMAX = 10;
     Chenille c = new Chenille(NB_ANNEAUX, XMAX / 2 , YMAX / 2);
     char t[][] = new char[XMAX + 1][YMAX + 1];
 
