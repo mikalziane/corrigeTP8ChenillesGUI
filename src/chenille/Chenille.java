@@ -11,11 +11,6 @@ public class Chenille {
 	    	anneaux[i] = new Anneau(xt - i - 1, yt);
 	}
 
-	public void dessiner(char[][] t) {
-		for (Anneau a : anneaux)
-			t[a.x()][a.y()]= a.getSymbole();
-		t[tete.x()][tete.y()] = tete.getSymbole();
-	}
 
 	public void deplacer(int xMAX, int yMAX) {
 		for (int i = anneaux.length -1; i >=1; --i)

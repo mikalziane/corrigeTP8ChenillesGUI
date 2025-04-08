@@ -11,9 +11,6 @@ public class Anneau {
 	public int y() {
 		return y;
 	}
-	public char getSymbole() {
-		return 'a';
-	}
 	
 	public void placerA(int x, int y) {
 		this.x = x;

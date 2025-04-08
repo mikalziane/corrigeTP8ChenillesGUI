@@ -14,11 +14,7 @@ public class Tete extends Anneau {
 	public Tete(int x, int y) {
 		this(x,y,EST);
 	}
-	
-	@Override
-	public char getSymbole() {
-		return 't';
-	}
+	public Direction direction() {	return cap;	}
 
 	public void deplacer(int xMax, int yMax) {
 		if (x() == 0 || x() == xMax ||
