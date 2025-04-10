@@ -15,6 +15,7 @@ public class ChenilleGUI extends JFrame {
     private Chenille chenille;
     private ChenillePanel panel;
     private Timer timer;
+    private JLabel positionLabel; // Label pour afficher la position
 
     public ChenilleGUI() {
         chenille = new Chenille(5, 10, 10);
@@ -28,6 +29,8 @@ public class ChenilleGUI extends JFrame {
         add(panel, BorderLayout.CENTER);
 
         JButton startButton = new JButton("Start");
+        positionLabel = new JLabel("Position: (10, 10)"); // Initialisation du label
+
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,6 +40,9 @@ public class ChenilleGUI extends JFrame {
                         public void actionPerformed(ActionEvent e) {
                             chenille.deplacer(panel.getWidth() / 20, panel.getHeight() / 20);
                             panel.repaint();
+                            // Mise à jour de la position de la tête
+                            Tete tete = chenille.tete();
+                            positionLabel.setText("Position: (" + tete.x() + ", " + tete.y() + ")");
                         }
                     });
                     timer.start();
@@ -48,8 +54,9 @@ public class ChenilleGUI extends JFrame {
             }
         });
 
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(startButton);
+        JPanel buttonPanel = new JPanel(new BorderLayout());
+        buttonPanel.add(startButton, BorderLayout.EAST);
+        buttonPanel.add(positionLabel, BorderLayout.WEST); // Ajout du label à gauche
         add(buttonPanel, BorderLayout.SOUTH);
     }
 

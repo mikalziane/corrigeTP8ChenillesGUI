@@ -17,11 +17,7 @@ public class Tete extends Anneau {
 	public Direction direction() {	return cap;	}
 
 	public void deplacer(int xMax, int yMax) {
-		if (x() == 0 || x() == xMax ||
-				y() == 0 || y() == yMax)
-			cap = cap.inverser();
-		else
-			cap = cap.deriver(1);
-		super.placerA(x()+cap.getDx(), y()+cap.getDy());
+		cap = cap.deriver(1);
+		super.placerA((x()+cap.getDx() + xMax)%xMax, (y()+cap.getDy()+yMax)%yMax);
 	}
 }
