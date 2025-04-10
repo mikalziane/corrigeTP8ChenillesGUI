@@ -19,4 +19,7 @@ public class Chenille {
 		tete.deplacer(xMAX, yMAX);
 	}
 
+    public Tete tete() { return tete;    }
+
+	public Anneau[] anneaux() {	return anneaux; }
 }
